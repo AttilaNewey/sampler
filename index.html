@@ -1,7 +1,10 @@
+<body>
+</body>
+
 <script src="https://cdn.jsdelivr.net/gh/netizenorg/netnet-standard-library@1.0.1/build/nn.min.js"></script>
 <script>
 
-  let base = 'https://storage.googleapis.com/cdn.patatap.com/A/'
+  let base = 'audio/'
   
   
   nn.get('body')
@@ -15,13 +18,13 @@
     .addTo('body')
     .set('preload', 'auto')
     // .set('controls', true)
-    .set('src', base + 'clay.mp3')
+    .set('src', base + '1.mp3')
   
   let moon = nn.create('audio')
     .addTo('body')
     // .set('controls', true)
     .set('preload', 'auto')
-    .set('src', base + 'moon.mp3')
+    .set('src', base + '2.mp3')
   
   function play (q) {
     if (q.key === '1') {
