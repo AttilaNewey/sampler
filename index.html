@@ -8,46 +8,93 @@
   
   
   nn.get('body')
-    .content ('')
+    .content ('squeeze me')
     // .css ('background', 'turquoise')
     // .css('margin', '45%') 
     .css ('font-family', 'futura')
     .css ('font-size', '40px')
   
-  let clay = nn.create('audio')
+  let c = nn.create('audio')
     .addTo('body')
     .set('preload', 'auto')
     // .set('controls', true)
-    .set('src', base + '1.mp3')
+    .set('src', base + 'c.mp3')
   
-  let moon = nn.create('audio')
+    let d = nn.create('audio')
     .addTo('body')
     // .set('controls', true)
     .set('preload', 'auto')
-    .set('src', base + '2.mp3')
+    .set('src', base + 'd.mp3')
   
-    let chord3 = nn.create('audio')
+    let e = nn.create('audio')
     .addTo('body')
     // .set('controls', true)
     .set('preload', 'auto')
-    .set('src', base + '3.mp3')
+    .set('src', base + 'e.mp3')
+
+    let f = nn.create('audio')
+    .addTo('body')
+    // .set('controls', true)
+    .set('preload', 'auto')
+    .set('src', base + 'f.mp3')
+    
+    let g = nn.create('audio')
+    .addTo('body')
+    // .set('controls', true)
+    .set('preload', 'auto')
+    .set('src', base + 'g.mp3')
   
-  function play (q) {
-    if (q.key === '1') {
-      clay.currentTime = 0
-    clay.play()
-    }
-    if (q.key === '2') {
-      moon.currentTime = 0
-    moon.play()
-    }
-    if (q.key === '3') {
-      chord3.currentTime = 0
-    chord3.play()
-    }
+    let a = nn.create('audio')
+    .addTo('body')
+    // .set('controls', true)
+    .set('preload', 'auto')
+    .set('src', base + 'a.mp3')
+    
+    let b = nn.create('audio')
+    .addTo('body')
+    // .set('controls', true)
+    .set('preload', 'auto')
+    .set('src', base + 'b.mp3')
+    
+let last = nn.width
+
+function play () {
+  let now = nn.width
+
+  if ((last >= 400 && now < 400) || (last < 400 && now >= 400)) {
+    // || means 'or'
+    c.currentTime = 0
+    c.play()
+  }
+  if ((last >= 500 && now < 500) || (last < 500 && now >= 500)) {
+    d.currentTime = 0
+    d.play()
+  }
+  if ((last >= 600 && now < 600) || (last < 600 && now >= 600)) {
+    e.currentTime = 0
+    e.play()
+  }
+  if ((last >= 700 && now < 700) || (last < 700 && now >= 700)) {
+    f.currentTime = 0
+    f.play()
+  }
+    if ((last >= 800 && now < 800) || (last < 800 && now >= 800)) {
+    g.currentTime = 0
+    g.play()
+  }
+    if ((last >= 900 && now < 900) || (last < 900 && now >= 900)) {
+    a.currentTime = 0
+    a.play()
+  }
+    if ((last >= 1000 && now < 1000) || (last < 1000 && now >= 1000)) {
+    b.currentTime = 0
+    b.play()
   }
   
+  last = now
+}
   
-  nn.on('keydown', play)
+  
+  nn.on('resize', play)
   
 </script>
