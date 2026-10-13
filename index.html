@@ -26,6 +26,12 @@
     .set('preload', 'auto')
     .set('src', base + '2.mp3')
   
+    let chord3 = nn.create('audio')
+    .addTo('body')
+    // .set('controls', true)
+    .set('preload', 'auto')
+    .set('src', base + '3.mp3')
+  
   function play (q) {
     if (q.key === '1') {
       clay.currentTime = 0
@@ -34,6 +40,10 @@
     if (q.key === '2') {
       moon.currentTime = 0
     moon.play()
+    }
+    if (q.key === '3') {
+      chord3.currentTime = 0
+    chord3.play()
     }
   }
   
