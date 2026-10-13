@@ -1,27 +1,3 @@
-<style>
-  .grid-container {
-    display: grid;
-    border: black;
-    background: gray;
-    width: 100%;
-  }
-  
-  .grid-item {
-    background: gray;
-    width: 33%;
-  }
-</style>
-<body>
-  <div class="grid-container">
-    <div class="grid-item">1</div>
-    <div class="grid-item">2</div>
-    <div class="grid-item">3</div>
-    <div class="grid-item">4</div>
-    <div class="grid-item">5</div>
-    <div class="grid-item">6</div>
-  </div>
-  </body>
-
 <script src="https://cdn.jsdelivr.net/gh/netizenorg/netnet-standard-library@1.0.1/build/nn.min.js"></script>
 <script>
 
@@ -29,7 +5,7 @@
   
   
   nn.get('body')
-    .content ('hello world')
+    .content ('')
     // .css ('background', 'turquoise')
     // .css('margin', '45%') 
     .css ('font-family', 'futura')
@@ -48,11 +24,11 @@
     .set('src', base + 'moon.mp3')
   
   function play (q) {
-    if (q.key === 'q') {
+    if (q.key === '1') {
       clay.currentTime = 0
     clay.play()
     }
-    if (q.key === 'w') {
+    if (q.key === '2') {
       moon.currentTime = 0
     moon.play()
     }
