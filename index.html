@@ -7,12 +7,13 @@
   let base = 'audio/'
   
   
-  nn.get('body')
-    .content ('squeeze me')
+  let page = nn.get('body')
+    .content ('s q u e e z e m e')
     // .css ('background', 'turquoise')
-    // .css('margin', '45%') 
+    .css('margin', '45%') 
     .css ('font-family', 'futura')
-    .css ('font-size', '40px')
+    .css ('font-size', '100%')
+    .css ('align', 'center')
   
   let c = nn.create('audio')
     .addTo('body')
@@ -56,39 +57,58 @@
     .set('preload', 'auto')
     .set('src', base + 'b.mp3')
     
+    let c2 = nn.create('audio')
+    .addTo('body')
+    // .set('controls', true)
+    .set('preload', 'auto')
+    .set('src', base + 'c2.mp3')
+    
+
 let last = nn.width
 
 function play () {
   let now = nn.width
 
-  if ((last >= 400 && now < 400) || (last < 400 && now >= 400)) {
-    // || means 'or'
+    if ((last >= 300 && now < 300) || (last < 300 && now >= 300)) {
     c.currentTime = 0
     c.play()
+    page.css('background', '#FFD600FF')
   }
-  if ((last >= 500 && now < 500) || (last < 500 && now >= 500)) {
+  if ((last >= 400 && now < 400) || (last < 400 && now >= 400)) {
+    // || means 'or'
     d.currentTime = 0
     d.play()
+    page.css('background', '#FFD600DF')
   }
-  if ((last >= 600 && now < 600) || (last < 600 && now >= 600)) {
+  if ((last >= 500 && now < 500) || (last < 500 && now >= 500)) {
     e.currentTime = 0
     e.play()
+    page.css('background', '#FFD600BF')
   }
-  if ((last >= 700 && now < 700) || (last < 700 && now >= 700)) {
+  if ((last >= 600 && now < 600) || (last < 600 && now >= 600)) {
     f.currentTime = 0
     f.play()
+    page.css('background', '#FFD6009F')
   }
-    if ((last >= 800 && now < 800) || (last < 800 && now >= 800)) {
+  if ((last >= 700 && now < 700) || (last < 700 && now >= 700)) {
     g.currentTime = 0
     g.play()
+    page.css('background', '#FFD60080')
   }
-    if ((last >= 900 && now < 900) || (last < 900 && now >= 900)) {
+    if ((last >= 800 && now < 800) || (last < 800 && now >= 800)) {
     a.currentTime = 0
     a.play()
+    page.css('background', '#FFD60060')
   }
-    if ((last >= 1000 && now < 1000) || (last < 1000 && now >= 1000)) {
+    if ((last >= 900 && now < 900) || (last < 900 && now >= 900)) {
     b.currentTime = 0
     b.play()
+    page.css('background', '#FFD60040')  
+  }
+    if ((last >= 1000 && now < 1000) || (last < 1000 && now >= 1000)) {
+    c2.currentTime = 0
+    c2.play()
+    page.css('background', '#FFD60020')
   }
   
   last = now
